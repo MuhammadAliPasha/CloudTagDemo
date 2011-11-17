@@ -20,7 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TestActivity extends Activity {
+public class CloudTagDemoActivity extends Activity {
 	private Button btn;
 	private EditText ep;
 	private TextView[] textViewG;
@@ -46,7 +46,7 @@ public class TestActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			String text = ((TextView) v).getText().toString();
-			Toast.makeText(TestActivity.this, text, Toast.LENGTH_SHORT).show();
+			Toast.makeText(CloudTagDemoActivity.this, text, Toast.LENGTH_SHORT).show();
 		}
 	};
 
@@ -57,7 +57,7 @@ public class TestActivity extends Activity {
 		LinearLayout llVoteOptionGroup = (LinearLayout) this
 				.findViewById(R.id.ll);
 		llVoteOptionGroup.removeAllViews();
-		Animation aa = AnimationUtils.loadAnimation(TestActivity.this,
+		Animation aa = AnimationUtils.loadAnimation(CloudTagDemoActivity.this,
 				R.anim.scale);
 		llVoteOptionGroup.setAnimation(aa);
 		llVoteOptionGroup.setGravity(Gravity.CENTER);
