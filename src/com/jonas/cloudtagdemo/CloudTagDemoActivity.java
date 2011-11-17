@@ -36,7 +36,7 @@ public class CloudTagDemoActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				createOption();
+				createOption(50,Color.BLUE);
 			}
 		});
 	}
@@ -46,11 +46,12 @@ public class CloudTagDemoActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			String text = ((TextView) v).getText().toString();
-			Toast.makeText(CloudTagDemoActivity.this, text, Toast.LENGTH_SHORT).show();
+			Toast.makeText(CloudTagDemoActivity.this, text, Toast.LENGTH_SHORT)
+					.show();
 		}
 	};
 
-	private void createOption() {
+	private void createOption(int tagNum, int backgroundColor) {
 
 		ViewGroup.LayoutParams vl = new ViewGroup.LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -61,11 +62,12 @@ public class CloudTagDemoActivity extends Activity {
 				R.anim.scale);
 		llVoteOptionGroup.setAnimation(aa);
 		llVoteOptionGroup.setGravity(Gravity.CENTER);
-		textViewG = new TextView[20];
+		llVoteOptionGroup.setBackgroundColor(backgroundColor);
+		textViewG = new TextView[tagNum];
 
 		int color[] = { Color.YELLOW, Color.CYAN, Color.GREEN, Color.RED,
-				Color.WHITE};
-		for (int i = 0; i < 5; i++) {
+				Color.WHITE };
+		for (int i = 0; i < tagNum; i++) {
 			textViewG[i] = new TextView(this);
 			textViewG[i].setText("dsdsds" + i);
 			textViewG[i].setLayoutParams(vl);
@@ -75,7 +77,7 @@ public class CloudTagDemoActivity extends Activity {
 			textViewG[i].setOnClickListener(listener);
 		}
 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < tagNum; i++) {
 			LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
 					LinearLayout.LayoutParams.WRAP_CONTENT,
 					LinearLayout.LayoutParams.WRAP_CONTENT);
